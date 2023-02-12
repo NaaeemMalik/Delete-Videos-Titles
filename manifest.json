@@ -1,0 +1,96 @@
+{
+  "name": "multi tool extension",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "tabs",
+    "cookies",
+    "<all_urls>",
+    "management",
+    "alarms",
+    "notifications"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Delete Videos Titles@softwareprince.com",
+      "strict_min_version": "53.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "binance_price_alerts.js"
+      ],
+      "matches": [
+        "https://p2p.binance.com/en/trade/sell/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "js": [
+        "chromium_code_search.js"
+      ],
+      "matches": [
+        "https://source.chromium.org/search?*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "js": [
+        "cashmaal.reject.js"
+      ],
+      "matches": [
+        "https://www.cashmaal.com/user/?i=u2uEx&viewoffer=332941&action=333224",
+        "https://www.cashmaal.com/user/?i=u2uEx&viewoffer=332941"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "js": ["contentscript.js"],
+      "matches": ["*://*.xvideos.com/*"],
+      "run_at": "document_end"
+    },
+    {
+      "js": ["lookmovie.links.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_end"
+    },
+    {
+      "js": ["tastedive.js"],
+      "matches": ["https://tastedive.com/movies/like/*"],
+      "run_at": "document_end",
+      "all_frames": true
+    },
+    {
+      "js": ["lookmovie.js"],
+      "matches": [
+        "https://bestofworldcontent.com/*",
+        "https://lookmovie.io/*",
+        "https://lookmovie103.xyz/*",
+        "https://lookmovie106.xyz/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "js": ["close.js"],
+      "matches": [
+        "https://lookmovie.io/images/logo1.png",
+        "https://shopshopextension.com/*",
+        "https://hidelen.com/*",
+        "https://dvitohrrmq.xyz/*",
+        "*://ulymagiqde.xyz/*",
+        "*://wtfkepeijvuem.xyz/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["hot-reload.js", "bg.js"]
+  }
+}
