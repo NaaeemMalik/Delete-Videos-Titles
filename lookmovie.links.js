@@ -13,3 +13,9 @@ setInterval(function () {
 if (location.href.includes("lookmovie.io")) {
     location.href = location.href.replace("lookmovie.io", "playerwatchlm43.xyz");
 }
+
+//change tab title and remove "Watch movie" in it
+
+// if(document.title.includes("Watch movie"))   
+document.title = document.title.replace("Watch movie", "");
+document.title = document.title.replace("Watch ", "");
